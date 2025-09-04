@@ -158,7 +158,7 @@ def main():
         pp_list = section.get("popup", [])
         if pp_list and not already_has(MARKS["popup"][0], html):
             raw_code = "\n".join(pp_list)
-            wrapped = wrap_popup_with_cooldown(raw_code, hours=6)
+            wrapped = wrap_popup_with_cooldown(raw_code, hours=1)
             html = inject_before_body_close(html, wrapped, "popup")
 
         # 5) 如果配置里没有 floating，就顺手清理历史悬浮（一次性清理/幂等）
